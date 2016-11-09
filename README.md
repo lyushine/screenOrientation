@@ -9,7 +9,7 @@
 
 
 ##使用方式：
-	<script src="http://ossweb-img.qq.com/images/js/landscape/screenOrientation.min.js"></script>
+	<script src="screenOrientation.min.js"></script>
 	<script>
 		var screenOrientation = new screenOrientation({
       mode:'portrait',//portrait(竖屏)、landscape(横屏)
