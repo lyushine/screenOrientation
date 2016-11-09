@@ -30,4 +30,4 @@ init:初始化执行函数,
 callback:发生旋转重置调用函数,
 
 ##例子效果：
-![扫描我](http://s.doyo.cn/img/58/11/645f9e9e78c639001196.png_news)
+![扫描我](http://s.doyo.cn/img/58/11/645f9e9e78c639001196.png)
