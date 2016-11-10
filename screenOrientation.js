@@ -1,7 +1,7 @@
 /**
  * 移动端网页强制横竖屏展示效果
  * @author shineliang
- * @create 2016/10/28 update 2016/10/28
+ * @create 2016/10/28 update 2016/11/10
  */
 var screenOrientation = function(option){
 	var _this = this;
