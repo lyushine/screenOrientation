@@ -25,28 +25,21 @@ var screenOrientation = function(option){
 		var cssBlock = 
 	'.'+_this.option.id+'_screenOrientation{-webkit-transform: rotateZ(90deg) !important; transform: rotateZ(90deg); position:relative;}';
 	var style = document.createElement("style");
-    style.type = "text/css";
-    style.textContent = cssBlock;
-    document.getElementsByTagName("head").item(0).appendChild(style);
+	style.type = "text/css";
+	style.textContent = cssBlock;
+	document.getElementsByTagName("head").item(0).appendChild(style);
 	var _width=(window.innerWidth > 0) ? window.innerWidth : screen.width;
 	var _height=(window.innerHeight > 0) ? window.innerHeight : screen.height;
-
-	function modifyDetec(){
-		if(_height<_width&&_this.option.mode == "portrait"&& flag==0){
+	//判断默认是横/竖屏
+	_this.modifyDetec = function(){
+	console.log(_width);
+		if((_height<_width&&_this.option.mode == "portrait")||(_height>_width&&_this.option.mode == "landscape")&& flag==0){
 			obj.style.width = _height+"px";
 			obj.style.height = _width+"px"; 
 			obj.style.top = -(_width-_height)*0.5+"px";
 			obj.style.left = -(_height-_width)*0.5+"px";
 			obj.className = className+" "+(_this.option.id+"_screenOrientation");
 			flag =1 ;
-			if(_this.option.callback){_this.option.callback();}
-		}else if(_height>_width&&_this.option.mode == "landscape"&& flag == 0){
-			obj.style.width =_height+"px";
-			obj.style.height = _width+"px";
-			obj.style.top = " ";
-			obj.style.left = _width-_height+"px";
-			obj.className = className+" "+(_this.option.id+"_screenOrientation");
-			flag = 1;
 			if(_this.option.callback){_this.option.callback();}
 		}else{
 			obj.style.width = w_width+"px";
@@ -56,6 +49,7 @@ var screenOrientation = function(option){
 			obj.style.left = " ";
 			flag = 0;
 		}
+		console.log(_width);
 	}
 	//判断手机横竖屏状态：
 	function detectOtt(){
@@ -64,7 +58,7 @@ var screenOrientation = function(option){
 		if(window.orientation==180||window.orientation==0||window.orientation==90||window.orientation==-90){
 			clearTimeout(timer);
 			timer = setTimeout(function(){
-				modifyDetec(_width,_height);
+				_this.modifyDetec(_width,_height);
 			},50);
 			
 		};
