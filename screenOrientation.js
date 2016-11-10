@@ -30,9 +30,7 @@ var screenOrientation = function(option){
 	document.getElementsByTagName("head").item(0).appendChild(style);
 	var _width=(window.innerWidth > 0) ? window.innerWidth : screen.width;
 	var _height=(window.innerHeight > 0) ? window.innerHeight : screen.height;
-	//判断默认是横/竖屏
 	_this.modifyDetec = function(){
-	console.log(_width);
 		if((_height<_width&&_this.option.mode == "portrait")||(_height>_width&&_this.option.mode == "landscape")&& flag==0){
 			obj.style.width = _height+"px";
 			obj.style.height = _width+"px"; 
@@ -49,9 +47,7 @@ var screenOrientation = function(option){
 			obj.style.left = " ";
 			flag = 0;
 		}
-		console.log(_width);
 	}
-	//判断手机横竖屏状态：
 	function detectOtt(){
 		_width=(window.innerWidth > 0) ? window.innerWidth : screen.width;
 		_height=(window.innerHeight > 0) ? window.innerHeight : screen.height;
