@@ -9,18 +9,19 @@
 
 
 ##使用方式：
-	<script src="screenOrientation.min.js"></script>
-	<script>
-		var screenOrientation = new screenOrientation({
-      mode:'portrait',//portrait(竖屏)、landscape(横屏)
-        init:function(){
-          // alert('初始化成功');
-        },
-        landback:function(){
-          alert("旋转成功");
-        }
-    });
-	</script>
+<script src="screenOrientation.min.js"></script>
+<script>
+var screenOrientation = new screenOrientation({
+	mode:'portrait',//portrait(竖屏)、landscape(横屏)
+	id:'wrap',
+	init:function(){
+	  // alert('初始化成功');
+	},
+	landback:function(){
+	  alert("旋转成功");
+	}
+});
+</script>
 ## 具体参数说明（标红为必填，其他为选填）：
 
 mode:屏幕模式 如portrait(竖屏)、landscape(横屏),
