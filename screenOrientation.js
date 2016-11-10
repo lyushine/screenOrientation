@@ -20,10 +20,10 @@ var screenOrientation = function(option){
 	var timer;
 	if(_this.option.mode == "portrait")
 		var cssBlock = 
-	'.'+_this.option.id+'_forcescreen{-webkit-transform: rotateZ(-90deg) !important; transform: rotateZ(-90deg); position:relative;}';
+	'.'+_this.option.id+'_screenOrientation{-webkit-transform: rotateZ(-90deg) !important; transform: rotateZ(-90deg); position:relative;}';
 	else
 		var cssBlock = 
-	'.'+_this.option.id+'_forcescreen{-webkit-transform: rotateZ(90deg) !important; transform: rotateZ(90deg); position:relative;}';
+	'.'+_this.option.id+'_screenOrientation{-webkit-transform: rotateZ(90deg) !important; transform: rotateZ(90deg); position:relative;}';
 	var style = document.createElement("style");
     style.type = "text/css";
     style.textContent = cssBlock;
@@ -33,24 +33,24 @@ var screenOrientation = function(option){
 
 	function modifyDetec(){
 		if(_height<_width&&_this.option.mode == "portrait"&& flag==0){
-			obj.style.minWidth = _height+"px";
-			obj.style.minHeight = _width+"px"; 
+			obj.style.width = _height+"px";
+			obj.style.height = _width+"px"; 
 			obj.style.top = -(_width-_height)*0.5+"px";
 			obj.style.left = -(_height-_width)*0.5+"px";
-			obj.className = className+" "+(_this.option.id+"_forcescreen");
+			obj.className = className+" "+(_this.option.id+"_screenOrientation");
 			flag =1 ;
 			if(_this.option.callback){_this.option.callback();}
 		}else if(_height>_width&&_this.option.mode == "landscape"&& flag == 0){
-			obj.style.minWidth =_height+"px";
-			obj.style.minHeight = _width+"px";
+			obj.style.width =_height+"px";
+			obj.style.height = _width+"px";
 			obj.style.top = " ";
 			obj.style.left = _width-_height+"px";
-			obj.className = className+" "+(_this.option.id+"_forcescreen");
+			obj.className = className+" "+(_this.option.id+"_screenOrientation");
 			flag = 1;
 			if(_this.option.callback){_this.option.callback();}
 		}else{
-			obj.style.minWidth = w_width+"px";
-			obj.style.minHeight = w_height+"px";
+			obj.style.width = w_width+"px";
+			obj.style.height = w_height+"px";
 			obj.className = className;
 			obj.style.top = " ";
 			obj.style.left = " ";
